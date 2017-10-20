@@ -1,4 +1,1 @@
-# hello-world
-They made me do it
- I'm learning coding and using GitHub seems to be really helpful.
- Not that I need it already, but I'd rather be ready when I'll have to use it.
+Je mettrai ici mes différents fichiers de config au fur et à mesure de mes essais et réussites ou au grè de mes besoins et envies.
