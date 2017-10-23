@@ -1,5 +1,5 @@
 " VIM Configuration - Fabien
-" Annule la compatibilite avec l'ancetre Vi : totalement indispensable
+" Annule la compatibilite avec Vi : 
 set nocompatible
 
 " -- Tags
