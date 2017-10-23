@@ -1,4 +1,4 @@
-" VIM Configuration - Fabien
+" VIM Configuration - Fabien (inspiré de celui de Vincent Jousse)
 " Annule la compatibilite avec Vi : 
 set nocompatible
 
