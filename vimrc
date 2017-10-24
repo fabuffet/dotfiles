@@ -1,5 +1,5 @@
-" VIM Configuration - Fabien (inspiré de celui de Vincent Jousse)
-" Annule la compatibilite avec Vi : 
+" VIM Configuration - Fabien
+" Annule la compatibilite avec l'ancetre Vi : totalement indispensable
 set nocompatible
 
 " -- Tags
@@ -16,7 +16,8 @@ set background=dark
 " -- Clavier
 :imap ,, <Esc>
 :map ,, <Esc>
-nmap ,q :nohlsearch<CR>
+" Effacer le surlignage des recherches
+nmap ,q :nohlsearch<CR>   
 
 
 " -- Aliases
@@ -26,14 +27,13 @@ nmap ,q :nohlsearch<CR>
 
 
 " -- Affichage
-set title                 " Met a jour le titre de votre fenetre ou de
-                          " votre terminal
+set title                 " Met a jour le titre de votre fenetre ou de votre terminal
 set number                " Affiche le numero des lignes
 set ruler                 " Affiche la position actuelle du curseur
-set wrap                  " Affiche les lignes trop longues sur plusieurs
-                          " lignes
-set scrolloff=2           " Affiche un minimum de 2 lignes autour du curseur
-                          " (pour le scroll)
+set wrap                  " Affiche les lignes trop longues sur plusieurs lignes
+set scrolloff=2           " Affiche un minimum de 2 lignes autour du curseur (pour le scroll)
+set laststatus=2          " Affiche la status line même sans split
+set statusline=%f         " Affiche le nom du fichier ouvert
 
 " -- Recherche
 set ignorecase            " Ignore la casse lors d'une recherche
