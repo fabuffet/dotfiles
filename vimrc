@@ -1,39 +1,49 @@
 " VIM Configuration - Fabien
-" Annule la compatibilite avec l'ancetre Vi : totalement indispensable
-set nocompatible
 
 " -- Tags
-" Thème - Clavier - Aliases - Affichage - Recherche - Beep - Comportement - Syntastic
-
+" Thème - Clavier - Aliases - Affichage - Recherche - Beep - Comportement - Syntastic Pymode
 
 " -- Thème
 execute pathogen#infect()
-colorscheme monokai-phoenix
-" Utilise la version sombre du thème
+call pathogen#helptags()
+let g:solarized_termcolors=256
+syntax enable
 set background=dark
+colorscheme solarized
+" Utilise la version sombre du thème
 
 
 " -- Clavier
 :imap ,, <Esc>
-:map ,, <Esc>
 " Effacer le surlignage des recherches
 nmap ,q :nohlsearch<CR>   
 
 
 " -- Aliases
-:command Sc SyntasticCheck
-:command Si SyntasticInfo
-:command Nt NERDTree
+command Sc SyntasticCheck
+command Si SyntasticInfo
+command Nt NERDTree
 
 
 " -- Affichage
 set title                 " Met a jour le titre de votre fenetre ou de votre terminal
 set number                " Affiche le numero des lignes
-set ruler                 " Affiche la position actuelle du curseur
 set wrap                  " Affiche les lignes trop longues sur plusieurs lignes
 set scrolloff=2           " Affiche un minimum de 2 lignes autour du curseur (pour le scroll)
 set laststatus=2          " Affiche la status line même sans split
 set statusline=%f         " Affiche le nom du fichier ouvert
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
 
 " -- Recherche
 set ignorecase            " Ignore la casse lors d'une recherche
@@ -46,7 +56,6 @@ set hlsearch              " Surligne les resultats de recherche
 
 " -- Beep
 set visualbell            " Empeche Vim de beeper
-set noerrorbells          " Empeche Vim de beeper
 
 
 " -- Comportement
@@ -58,17 +67,19 @@ set hidden
 syntax enable
 " Active les comportements specifiques aux types de fichiers comme
 " la syntaxe et l'indentation
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 
 " -- Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+" Pymode
+" let g:pymode_python = 'python3'
